@@ -2,49 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Six Clown // OSINT CORE</title>
+  <title>The Six Clown Team</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="noise"></div>
-<div class="grid"></div>
+<div class="container">
 
-<div class="app">
+  <h1 class="title">THE SIX<br>CLOWN TEAM</h1>
 
-  <header>
-    <div class="logo">
-      <span class="tag">[SC]</span>
-      <h1>SIX CLOWN OSINT</h1>
-    </div>
-    <div class="sys">
-      <span class="dot"></span> CORE ONLINE
-    </div>
-  </header>
+  <div class="icons">
+    <span>🤡</span>
+    <span>🦅</span>
+  </div>
 
-  <section class="panel">
-    <label>TARGET NUMBER</label>
-    <div class="input-group">
-      <span class="prompt">></span>
-      <input id="numero" placeholder="+346XXXXXXXX">
-      <button onclick="scan()">EXEC</button>
-    </div>
-  </section>
+  <p class="subtitle">OSINT PHONE INTELLIGENCE · RESTRICTED ACCESS</p>
 
-  <section class="terminal">
-    <pre id="terminal">[+] Initializing OSINT Core...
-[+] Waiting for target input...</pre>
-  </section>
+  <div class="panel">
+    <p class="prompt">&gt; Introduce el objetivo (número internacional):</p>
+    <input type="text" placeholder="+34600000000" id="numero">
+    <button onclick="scan()">INICIAR ESCANEO</button>
 
-  <section class="actions">
-    <button onclick="exportarTXT()">EXPORT TXT</button>
-    <button onclick="exportarJSON()">EXPORT JSON</button>
-  </section>
-
-  <footer>
-    <span>Six Clown Team</span>
-    <span>OSINT / SIGINT / NETWORK ANALYSIS</span>
-  </footer>
+    <p class="legal">
+      ⚠ Sistema OSINT legal. No se recopilan datos personales identificables.
+    </p>
+  </div>
 
 </div>
 
