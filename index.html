@@ -2,19 +2,43 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>The Six Clown Team</title>
+  <title>Six Clown OSINT</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>OSINT PHONE SCANNER</h2>
+<div class="app">
 
-<input id="numero" placeholder="+34600000000">
-<button onclick="iniciarEscaneo(numero.value)">INICIAR ESCANEO</button>
-<button onclick="exportarTXT()">EXPORTAR TXT</button>
-<button onclick="exportarJSON()">EXPORTAR JSON</button>
+  <header>
+    <h1>Six Clown OSINT</h1>
+    <span class="status">SYSTEM ONLINE</span>
+  </header>
 
-<pre id="terminal"></pre>
+  <section class="panel">
+    <label>Número de teléfono</label>
+    <div class="input-group">
+      <input id="numero" placeholder="+34600000000">
+      <button onclick="iniciarEscaneo(numero.value)">
+        SCAN
+      </button>
+    </div>
+  </section>
+
+  <section class="terminal-container">
+    <pre id="terminal"></pre>
+  </section>
+
+  <section class="actions">
+    <button onclick="exportarTXT()">Export TXT</button>
+    <button onclick="exportarJSON()">Export JSON</button>
+  </section>
+
+  <footer>
+    <span>Six Clown Team</span>
+    <span>OSINT • NETWORK • ANALYSIS</span>
+  </footer>
+
+</div>
 
 <script src="script.js"></script>
 </body>
