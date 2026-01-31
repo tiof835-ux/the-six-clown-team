@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: radial-gradient(circle at top, #0b2b1f, #000);
   font-family: 'Share Tech Mono', monospace;
   color: #1cff9a;
@@ -16,9 +16,9 @@ body {
 }
 
 .container {
-  text-align: center;
-  width: 100%;
   max-width: 420px;
+  width: 100%;
+  text-align: center;
 }
 
 .title {
@@ -28,57 +28,47 @@ body {
   margin-bottom: 10px;
 }
 
-.icons {
-  font-size: 38px;
-  margin-bottom: 15px;
-}
-
 .subtitle {
   font-size: 12px;
   letter-spacing: 2px;
-  opacity: 0.9;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .panel {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0,0,0,0.8);
   border-radius: 18px;
   padding: 25px;
+  border: 1px solid rgba(0,255,150,0.3);
   box-shadow: 0 0 40px rgba(0,255,150,0.25);
-  border: 1px solid rgba(0,255,150,0.25);
 }
 
 .prompt {
   text-align: left;
-  font-size: 14px;
   margin-bottom: 10px;
 }
 
 input {
   width: 100%;
+  padding: 14px;
   background: #000;
   border: 2px solid #1cff9a;
   border-radius: 10px;
-  padding: 14px;
   color: #1cff9a;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   outline: none;
-  margin-bottom: 20px;
-  box-shadow: inset 0 0 10px rgba(0,255,150,0.2);
 }
 
 button {
   width: 100%;
-  padding: 16px;
+  margin-top: 15px;
+  padding: 15px;
   background: #1cff9a;
   color: #000;
-  font-size: 18px;
+  font-weight: bold;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 1px;
   box-shadow: 0 0 20px rgba(0,255,150,0.6);
 }
 
@@ -86,8 +76,72 @@ button:hover {
   background: #5cffbe;
 }
 
+#terminal {
+  margin-top: 20px;
+  background: #000;
+  border: 1px solid #1cff9a;
+  border-radius: 10px;
+  padding: 15px;
+  height: 220px;
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.actions button {
+  flex: 1;
+  background: transparent;
+  border: 1px solid #1cff9a;
+  color: #1cff9a;
+  box-shadow: none;
+}
+
+.actions button:hover {
+  background: #1cff9a;
+  color: #000;
+}
+
 .legal {
-  margin-top: 18px;
-  font-size: 11px;
+  margin-top: 15px;
+  font-size: 10px;
   color: #ffb347;
 }
+
+/* GLITCH */
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 #00ff99; }
+  20% { text-shadow: -2px 0 #ff003c; }
+  40% { text-shadow: 2px 2px #00ff99; }
+  60% { text-shadow: -2px -2px #ff003c; }
+  100% { text-shadow: none; }
+}
+
+/* ACCESS GRANTED */
+.access {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.access-box {
+  border: 2px solid #00ff99;
+  padding: 40px;
+  box-shadow: 0 0 40px #00ff99;
+}
+
+.hidden {
+  display: none;
+  }
