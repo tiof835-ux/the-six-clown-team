@@ -1,22 +1,117 @@
-body {
-  background: #000;
-  color: #0f0;
-  font-family: monospace;
-  padding: 20px;
+* {
+  box-sizing: border-box;
 }
 
-button, input {
-  background: black;
-  color: #0f0;
-  border: 1px solid #0f0;
-  padding: 5px;
-  margin: 5px;
+body {
+  margin: 0;
+  background: #0b0e14;
+  color: #e6e6e6;
+  font-family: "Inter", system-ui, monospace;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1f2430;
+  padding-bottom: 15px;
+}
+
+header h1 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.status {
+  color: #00ff99;
+  font-size: 12px;
+}
+
+/* PANEL INPUT */
+.panel {
+  margin-top: 30px;
+}
+
+.panel label {
+  font-size: 13px;
+  color: #9aa4bf;
+}
+
+.input-group {
+  display: flex;
+  margin-top: 8px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  background: #111522;
+  border: 1px solid #1f2430;
+  color: #fff;
+  outline: none;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  background: #1f2430;
+  border: 1px solid #2c3345;
+  color: #00ff99;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background: #2c3345;
+}
+
+/* TERMINAL */
+.terminal-container {
+  margin-top: 25px;
+  border: 1px solid #1f2430;
+  background: #06080f;
 }
 
 #terminal {
-  margin-top: 15px;
+  height: 320px;
   padding: 15px;
-  height: 350px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #00ff99;
   overflow-y: auto;
-  border: 1px solid #0f0;
+  white-space: pre-wrap;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  background: transparent;
+  border: 1px solid #2c3345;
+  color: #9aa4bf;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  border-color: #00ff99;
+  color: #00ff99;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #5c637a;
 }
