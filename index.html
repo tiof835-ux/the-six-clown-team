@@ -1,186 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>THE SIX CLOWN TEAM</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-:root {
-  --green: #00ff9c;
-  --dark: #020202;
-  --panel: #050505;
-  --border: #00ff9c33;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-body {
-  margin: 0;
-  background: radial-gradient(circle at top, #050505, #000);
-  color: var(--green);
-  min-height: 100vh;
-}
-
-header {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 3.2rem;
-  letter-spacing: 3px;
-  text-shadow: 0 0 25px var(--green);
-}
-
-header span {
-  display: block;
-  font-size: 1rem;
-  color: #7dffcf;
-  margin-top: 10px;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-
-.panel {
-  background: linear-gradient(180deg, #050505, #020202);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 35px;
-  box-shadow: 0 0 60px #00ff9c22;
-}
-
-input {
-  width: 100%;
-  padding: 16px;
-  background: black;
-  border: 1px solid var(--green);
-  border-radius: 8px;
-  color: var(--green);
-  font-size: 1.1rem;
-}
-
-input::placeholder {
-  color: #4cffb3;
-}
-
-button {
-  margin-top: 18px;
-  width: 100%;
-  padding: 16px;
-  background: var(--green);
-  color: black;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  filter: brightness(1.2);
-}
-
-.terminal {
-  margin-top: 25px;
-  padding: 20px;
-  background: #000;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  display: none;
-  animation: flicker 0.8s ease;
-}
-
-.line {
-  margin-bottom: 8px;
-}
-
-.warning {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #ffaa00;
-}
-
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.75rem;
-  color: #5affc0;
-}
-
-@keyframes flicker {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-</style>
+  <meta charset="UTF-8">
+  <title>The Six Clown Team</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <h1>THE SIX CLOWN TEAM 🤡🦅</h1>
-  <span>OSINT PHONE INTELLIGENCE • RESTRICTED ACCESS</span>
-</header>
+<h2>OSINT PHONE SCANNER</h2>
 
-<div class="container">
-  <div class="panel">
-    <p>> Introduce el objetivo (número internacional):</p>
+<input id="numero" placeholder="+34600000000">
+<button onclick="iniciarEscaneo(numero.value)">INICIAR ESCANEO</button>
+<button onclick="exportarTXT()">EXPORTAR TXT</button>
+<button onclick="exportarJSON()">EXPORTAR JSON</button>
 
-    <input id="phone" placeholder="+34600000000">
+<pre id="terminal"></pre>
 
-    <button onclick="scan()">INICIAR ESCANEO</button>
-
-    <div class="terminal" id="terminal"></div>
-
-    <div class="warning">
-      ⚠️ Sistema OSINT legal. No se recopilan datos personales identificables.
-    </div>
-  </div>
-</div>
-
-<footer>
-  © THE SIX CLOWN TEAM • Signal detected • Trust no one
-</footer>
-
-<script>
-async function scan() {
-  const phone = document.getElementById("phone").value.trim();
-  if (!phone) return alert("OBJETIVO NO DEFINIDO");
-
-  const terminal = document.getElementById("terminal");
-  terminal.style.display = "block";
-  terminal.innerHTML = "<div class='line'>[+] Conectando a nodos...</div>";
-
-  const API_KEY = "TU_API_KEY_AQUI";
-
-  try {
-    const res = await fetch(
-      `https://phonevalidation.abstractapi.com/v1/?api_key=${API_KEY}&phone=${encodeURIComponent(phone)}`
-    );
-    const data = await res.json();
-
-    terminal.innerHTML += `
-      <div class="line">[✔] Número válido: ${data.valid}</div>
-      <div class="line">[🌍] País: ${data.country.name}</div>
-      <div class="line">[📡] Operador: ${data.carrier}</div>
-      <div class="line">[📱] Tipo de línea: ${data.type}</div>
-      <div class="line">[☎] Formato INT: ${data.format.international}</div>
-      <div class="line">[✓] Escaneo finalizado</div>
-    `;
-  } catch (e) {
-    terminal.innerHTML += "<div class='line'>[X] ERROR DE CONEXIÓN</div>";
-  }
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
