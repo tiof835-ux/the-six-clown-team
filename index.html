@@ -11,23 +11,37 @@
 
   <h1 class="title">THE SIX<br>CLOWN TEAM</h1>
 
-  <div class="icons">
-    <span>🤡</span>
-    <span>🦅</span>
-  </div>
-
   <p class="subtitle">OSINT PHONE INTELLIGENCE · RESTRICTED ACCESS</p>
 
   <div class="panel">
     <p class="prompt">&gt; Introduce el objetivo (número internacional):</p>
-    <input type="text" placeholder="+34600000000" id="numero">
+    <input type="text" id="numero" placeholder="+34600000000">
     <button onclick="scan()">INICIAR ESCANEO</button>
 
+    <pre id="terminal"></pre>
+
+    <div class="actions">
+      <button onclick="exportarTXT()">EXPORT TXT</button>
+      <button onclick="exportarJSON()">EXPORT JSON</button>
+    </div>
+
     <p class="legal">
-      ⚠ Sistema OSINT legal. No se recopilan datos personales identificables.
+      Demo OSINT. Datos simulados con fines educativos y demostración.
     </p>
   </div>
 
+</div>
+
+<!-- SONIDOS -->
+<audio id="typeSound" src="https://assets.mixkit.co/active_storage/sfx/1105/1105-preview.mp3" preload="auto"></audio>
+<audio id="beepSound" src="https://assets.mixkit.co/active_storage/sfx/3005/3005-preview.mp3" preload="auto"></audio>
+
+<!-- ACCESS GRANTED -->
+<div id="access" class="access hidden">
+  <div class="access-box">
+    <h2>ACCESS GRANTED</h2>
+    <p>OSINT CORE UNLOCKED</p>
+  </div>
 </div>
 
 <script src="script.js"></script>
